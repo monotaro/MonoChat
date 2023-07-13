@@ -1,0 +1,32 @@
+name: Deploy to GCE
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      # checkout
+      - uses: actions/checkout@v2
+    
+      # authenticates to Google Cloud
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.gcp_credentials }}'
+    
+      # checkout and deploy on GCE
+      - name: 'deploy'
+        id: 'compute-ssh'
+        uses: 'google-github-actions/ssh-compute@v0'
+        with:
+          instance_name: 'XXXXXXXXXX'  # your instance name
+          zone: 'XXXXXXXXXX'  # your zone
+          ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
+          command: '(サーバー上で最新のリポジトリをpull) && make setup && sudo bash scripts/systemctl-run.sh restart'

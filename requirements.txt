@@ -1,0 +1,6 @@
+coverage == 7.2.5
+google-cloud-secret-manager == 2.16.1
+openai == 0.27.5
+parameterized == 0.9.0
+slack-bolt == 1.18.0
+

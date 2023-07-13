@@ -1,0 +1,12 @@
+[Unit]
+Description=MonoChat Server 1
+
+[Service]
+Type=simple
+WorkingDirectory={YOUR WOKING DIRECTORY}
+ExecStart=make run
+Restart=always
+
+[Install]
+WantedBy=multi-user.targetroot@{YOUR INSTANCE NAME}:{YOUR WOKING DIRECTORY}
+
