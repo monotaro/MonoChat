@@ -1,8 +1,9 @@
 # MonoChat
 
-Chat GPT (Azure OpenAI Service) を利用したSlack上で動くChat bot
+ChatGPT (Azure OpenAI Service) を利用したSlack上で動くChat bot
 
 ※ このリポジトリは参照用に切り出したもので、更新する予定は今のところありません。
+※ 本Slackbotについて書いたブログは[こちら](https://tech-blog.monotaro.com/entry/2023/07/19/090000)から
 
 ## 各種手順
 
